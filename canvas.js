@@ -11,6 +11,15 @@ let dx = (Math.random() - 0.5) *8;
 let dy = (Math.random() - 0.5) *8;
 let radius = 50;
 
+const Circle = (x,y) => {
+    this.x = x;
+    this.y = y;
+
+    this.darw = function() {
+        
+    }
+}
+
 const animate = () => {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, innerWidth,innerHeight);
