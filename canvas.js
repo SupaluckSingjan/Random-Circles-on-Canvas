@@ -18,8 +18,10 @@ function Circle(x,y, dx, dy, radius) {
     this.draw = function() {
         c.beginPath();
         c.arc(this.x, this.y, this.radius, Math.PI*2, false);
-        c.strokeStyle = "#c55a83";
+        c.strokeStyle = 'blue';
         c.stroke();
+        c.fillStyle = 'hsl('+ 100 * Math.random() + ', 90%, 90%)';
+        c.fill();
     }
 
     // Boundaries & Velocity
@@ -50,11 +52,11 @@ let radius = 50; */
 let circleArray = [];
 
 for(let i =0;i < 100; i++) {
-    let x = Math.random() * innerWidth; 
-    let y = Math.random() * innerHeight;
+    let radius = 50;
+    let x = Math.random() * (innerWidth - radius * 2) +radius; 
+    let y = Math.random() * (innerHeight - radius * 2) +radius;
     let dx = (Math.random() - 0.5) *8;
     let dy = (Math.random() - 0.5) *8;
-    let radius = 50;
     circleArray.push(new Circle(x, y, dx, dy, radius));
 }
 
