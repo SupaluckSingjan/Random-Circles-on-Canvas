@@ -5,8 +5,10 @@ canvas.height = window.innerHeight;
 
 let c = canvas.getContext('2d');
 
-let x = 250;
-let y = 250;
+let x = Math.random() * innerWidth; 
+let y = Math.random() * innerHeight;
+let dx = (Math.random() - 0.5) *8;
+let dy = (Math.random() - 0.5) *8;
 let radius = 50;
 
 const animate = () => {
@@ -19,7 +21,17 @@ const animate = () => {
     c.strokeStyle = "#c55a83";
     c.stroke();
 
-    x += 10
+    if( x + radius > innerWidth || x  < 0 + radius) {
+        dx = -dx; 
+    }
+
+     if( y + radius > innerHeight || y  < 0 + radius) {
+        dy = -dy; 
+    }
+
+    x += dx;
+    y += dy; 
+    
 }
 
 animate();
